@@ -1,5 +1,5 @@
 {
-  "name": "andrew-m-higgs/registrar",
+  "name": "andrew-m-higgs/Algorand-Discord-Registrar",
   "timeout": 30000,
   "connector": false,
   "events": {
