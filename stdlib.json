@@ -1,0 +1,79 @@
+{
+  "name": "andrew-m-higgs/registrar",
+  "timeout": 30000,
+  "connector": false,
+  "events": {
+    "functions/events/discord/command/config-creator-wallets.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "config-creator-wallets"
+      }
+    },
+    "functions/events/discord/command/config-log-channel.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "config-log-channel"
+      }
+    },
+    "functions/events/discord/command/config-opt-in-token.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "config-opt-in-token"
+      }
+    },
+    "functions/events/discord/command/config-owner1-role.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "config-owner1-role"
+      }
+    },
+    "functions/events/discord/command/config-project-name.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "config-project-name"
+      }
+    },
+    "functions/events/discord/command/config-registered-role.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "config-registered-role"
+      }
+    },
+    "functions/events/discord/command/update-creator-ids.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "update-creator-ids"
+      }
+    },
+    "functions/events/discord/command/flex.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "flex"
+      }
+    },
+    "functions/events/discord/command/register.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "register"
+      }
+    },
+    "functions/events/discord/command/update-roles.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "update-roles"
+      }
+    },
+    "functions/events/discord/message/selectmenu/interaction.js": {
+      "name": "discord.message.selectmenu.interaction",
+      "subtype": {
+        "custom_id": "flexselectmenu"
+      }
+    },
+    "functions/events/discord/message/button/OptinButton.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "btnOptedIn"
+      }
+    }
+  }
+}

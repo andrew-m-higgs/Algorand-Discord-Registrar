@@ -1,0 +1,8 @@
+{
+  "name": "algorand-discord-registrar",
+  "author": "andrew-m-higgs",
+  "publish": false,
+  "dependencies": {
+    "lib": "latest"
+  }
+}
