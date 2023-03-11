@@ -1,5 +1,5 @@
 console.log('################################################################################')
-console.log('        command/config-owner1-role.js STARTING...')
+console.log('        command/config-owner-roles.js STARTING...')
 console.log('################################################################################')
 
 const lib       = require('lib')({token: process.env.STDLIB_SECRET_TOKEN});
