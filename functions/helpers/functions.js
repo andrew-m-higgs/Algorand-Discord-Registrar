@@ -73,6 +73,23 @@ module.exports = {
   },
 
   //////////////////////////////////////////////////////////
+  // setOwnerRoleEmbed() - returns an embed object
+  setOwnerRoleEmbed: (roleID, roleName, numNFTs, isNew) => {
+    let colour = config.green();
+    if (isNew) {
+      colour = config.red();
+    }
+
+    return {
+      "type"       : "rich",
+      "title"      : roleName,
+      "description": "For owners with " + numNFTs + " or more NFTs. The role ID is: " + roleID,
+      "color"      : colour,     
+
+    }
+  },
+
+  //////////////////////////////////////////////////////////
   // getCreatorWallets() - return an array of Creator 
   //                       Wallets stored in key value pair
   getCreatorWallets: async (context) => {
@@ -83,6 +100,22 @@ module.exports = {
     });
 
     return walletStrings.split(",");    
+  },
+
+  //////////////////////////////////////////////////////////
+  // getRoleName() - return a role name based on a role id 
+  getRoleName: async (context, roleId) => {
+    let guild_id = context.params.event.guild_id;
+    let server_roles  = await lib.discord.guilds['@0.2.4'].roles.list({
+      guild_id: guild_id,
+    });
+
+    for (let i = 0; i < server_roles.length; i++) {
+      if (roleId == server_roles[i].id) {
+        return server_roles[i].name;
+      }
+    }
+    return "THIS ROLE ID DOES NOT EXIST";
   },
 
 }
