@@ -12,6 +12,9 @@ module.exports = {
   green: () => {
     return 0x78B159;
   },
+  orange: () => {
+    return 0xFF9900;
+  },
   red: () => {
     return 0xDD2E44;
   },
