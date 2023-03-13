@@ -18,6 +18,9 @@ module.exports = {
   red: () => {
     return 0xDD2E44;
   },
+  blue: () => {
+    return 0x19AFE4;
+  },
 
   // Some emojis to use
   successMark: () => {
