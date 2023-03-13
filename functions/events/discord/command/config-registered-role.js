@@ -16,7 +16,7 @@ if (isAdmin) {
   await lib.utils.kv['@0.1.16'].set({
     key: "RegisteredRole-" + guild_id,
     value: regRole
-  }).catch(console.error(e));
+  });
 
   message_content = config.successMark() + " The registered role was set to **" + regRole + "**. Re-run the command to change it."
 } else {

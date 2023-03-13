@@ -16,7 +16,7 @@ if (isAdmin) {
   await lib.utils.kv['@0.1.16'].set({
     key: "OptInToken-" + guild_id,
     value: optInToken
-  }).catch(console.error(e));
+  });
 
   message_content = config.successMark() + " The opt-in token was set to ASA ID **" + optInToken + "**. Re-run the command to change it."
 } else {

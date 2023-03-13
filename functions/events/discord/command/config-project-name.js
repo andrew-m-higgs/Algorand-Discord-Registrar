@@ -16,7 +16,7 @@ if (isAdmin) {
   await lib.utils.kv['@0.1.16'].set({
     key: "ProjectName-" + guild_id,
     value: projectName
-  }).catch(console.error(e));
+  });
 
   message_content = config.successMark() + " The project name was set to **" + projectName + "**. Re-run the command to change it."
 } else {
