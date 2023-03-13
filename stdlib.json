@@ -63,16 +63,16 @@
         "command": "update-roles"
       }
     },
-    "functions/events/discord/message/selectmenu/interaction.js": {
-      "name": "discord.message.selectmenu.interaction",
-      "subtype": {
-        "custom_id": "flexselectmenu"
-      }
-    },
-    "functions/events/discord/message/button/OptinButton.js": {
+    "functions/events/discord/message/button/btn_roles_update.js": {
       "name": "discord.message.button.interaction",
       "subtype": {
-        "custom_id": "btnOptedIn"
+        "custom_id": "btn_roles_update"
+      }
+    },
+    "functions/events/discord/message/button/btn_roles_cancel.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "btn_roles_cancel"
       }
     }
   }
