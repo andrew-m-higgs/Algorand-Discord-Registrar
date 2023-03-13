@@ -10,7 +10,7 @@ Configured by the creator or admin and used by the members.
 
 ## Commands
 
-Commands used by the Creator / Admin:
+### Commands used by the Creator / Admin:
 
 |Command|Description|
 |----|----|
@@ -21,7 +21,7 @@ Commands used by the Creator / Admin:
 |**/config-project-name**|Used to set the project name used by the bot for messages.|
 |**/config-registered-role**|Used to set the role for all members who have a registered wallet. e.g. @Registered|
 
-Commands used by members:
+### Commands used by members:
 |Command|Description|
 |----|----|
 |**/flex**|Used to flex their favourite owned NFT from the creator wallets|
