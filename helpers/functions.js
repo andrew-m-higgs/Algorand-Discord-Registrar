@@ -80,6 +80,11 @@ module.exports = {
     let footer = "";
 
     switch(embedType) {
+      case "VIEW":
+        colour = config.blue();
+        emoji  = ":heavy_equals_sign:";
+        footer = "";
+        break;
       case "KEEP":
         colour = config.orange();
         emoji  = ":heavy_equals_sign:";
@@ -99,28 +104,28 @@ module.exports = {
 
     let embed = {
       "type"       : "rich",
-      "title"      : numNFTs + ` or more NFTs needed`,
+      "title"      : `${numNFTs} or more NFTs needed`,
       "description": "",
       "color"      : colour,     
       "fields": [
         {
           "name": `Rolename`,
-          "value": roleName,
+          "value": `${roleName}`,
           "inline": true
         },
         {
           "name": `NFTs`,
-          "value": numNFTs,
+          "value": `${numNFTs}`,
           "inline": true
         },
         {
           "name": `RoleID`,
-          "value": roleID,
+          "value": `${roleID}`,
           "inline": true
         }
       ],
       "footer": {
-        "text": `This role exists and will not be changed.`
+        "text": `${footer}`
       }
     }
 
