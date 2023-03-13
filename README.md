@@ -15,16 +15,16 @@ Commands used by the Creator / Admin:
 |Command|Description|
 |----|----|
 |**/config-creator-wallets**|Used to set the wallet addresses of the Creator Wallet|
+|**/config-log-channel**|Used to set the channel to which the bot will log information|
 |**/config-opt-in-token**|Used to set the opt-in token which will be used to confirm wallet ownership|
+|**/config-owner-roles**|Used to set the roles given to reward owners of multiple NFTs|
 |**/config-project-name**|Used to set the project name used by the bot for messages.|
 |**/config-registered-role**|Used to set the role for all members who have a registered wallet. e.g. @Registered|
-|**/config-owner1-role**|Used to set the role for 1 or more NFTs. e.g. @Owner|
-|**/config-owner2-role**<br />**/config-owner3-role**<br />**/config-owner4-role**<br />**/config-owner5-role**|Used to set the role for x or more NFTs (options require: Role and x (the # of NFTs)|
-|**/config-log-channel**|Used to set the channel to which the bot will log information|
 
 Commands used by members:
 |Command|Description|
 |----|----|
+|**/flex**|Used to flex their favourite owned NFT from the creator wallets|
 |**/register**|Used to register their wallet. Gains the role set in **/config-registered-role**|
 |**/update-roles**|Used to to check and update roles by member.Checks the number of owned NFTs and gives the highest role achieved while removing all others|
-|**/flex**|Used to flex their favourite owned NFT from the creator wallets|
+|**/view-owner-roles**|Gey a list of roles assigned based on the number of NFTs held|
