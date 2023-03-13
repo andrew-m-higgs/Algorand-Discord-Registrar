@@ -27,4 +27,4 @@ Commands used by members:
 |**/flex**|Used to flex their favourite owned NFT from the creator wallets|
 |**/register**|Used to register their wallet. Gains the role set in **/config-registered-role**|
 |**/update-roles**|Used to to check and update roles by member.Checks the number of owned NFTs and gives the highest role achieved while removing all others|
-|**/view-owner-roles**|Gey a list of roles assigned based on the number of NFTs held|
+|**/view-owner-roles**|Get a list of roles assigned based on the number of NFTs held|
