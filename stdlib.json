@@ -21,10 +21,10 @@
         "command": "config-opt-in-token"
       }
     },
-    "functions/events/discord/command/config-owner1-role.js": {
+    "functions/events/discord/command/config-owner-roles.js": {
       "name": "discord.command",
       "subtype": {
-        "command": "config-owner1-role"
+        "command": "config-owner-roles"
       }
     },
     "functions/events/discord/command/config-project-name.js": {
