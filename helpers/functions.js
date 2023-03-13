@@ -81,7 +81,7 @@ module.exports = {
 
     switch(embedType) {
       case "VIEW":
-        colour = config.blue();
+        colour = config.randomColour();
         emoji  = ":heavy_equals_sign:";
         footer = "";
         break;
