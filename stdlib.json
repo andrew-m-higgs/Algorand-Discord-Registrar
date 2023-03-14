@@ -69,6 +69,18 @@
         "command": "view-owner-roles"
       }
     },
+    "functions/events/discord/command/clear-owner-roles.js": {
+      "name": "discord.command",
+      "subtype": {
+        "command": "clear-owner-roles"
+      }
+    },
+    "functions/events/discord/message/button/btn_roles_clear.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "btn_roles_clear"
+      }
+    },
     "functions/events/discord/message/button/btn_roles_update.js": {
       "name": "discord.message.button.interaction",
       "subtype": {
