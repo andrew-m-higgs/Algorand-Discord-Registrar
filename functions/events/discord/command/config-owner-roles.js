@@ -29,7 +29,12 @@ let notPushed       = true;
 let isAdmin = await functions.isAdmin(context);
 
 if (isAdmin) {
-// IS AN ADMIN
+  // IS AN ADMIN
+  await lib.discord.interactions['@1.0.1'].responses.ephemeral.create({
+    token: token,
+    content: "Adding a new owner role..."
+  });
+
   let currentOwnerRoles = await lib.utils.kv['@0.1.16'].get({
     key: "OwnerRoles-" + guild_id,
   });
@@ -38,12 +43,8 @@ if (isAdmin) {
     currentOwnerRoles = [];
   };
 
-  //console.log("Current Owner Roles : " + JSON.stringify(currentOwnerRoles));
-
   if (currentOwnerRoles.length > 0) {
-    //console.log(`Got here: A`);
     for (let i = 0; i < currentOwnerRoles.length; i++) {
-      //console.log(`Got here: B`);
       if (currentOwnerRoles[i].amount < newNumNFTs) {
         let embed = functions.setOwnerRoleEmbed(newOwnerRoleID, newOwnerRoleName, newNumNFTs, "ADD");
         embeds.push(embed);
@@ -84,9 +85,6 @@ await lib.utils.kv['@0.1.16'].set({
   key: "tmp_OwnerRoles-" + guild_id,
   value: newOwnerRoles
 })
-
-//console.log(JSON.stringify(embeds));
-//console.log(JSON.stringify(newOwnerRoles));
 
 let messageInner = {
   token: token,
