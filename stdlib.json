@@ -83,6 +83,12 @@
     },
 
 
+    "functions/events/discord/message/selectmenu/dropdown_flex.js": {
+      "name": "discord.message.button.interaction",
+      "subtype": {
+        "custom_id": "dropdown_flex"
+      }
+    },
     "functions/events/discord/message/button/btn_roles_clear.js": {
       "name": "discord.message.button.interaction",
       "subtype": {
