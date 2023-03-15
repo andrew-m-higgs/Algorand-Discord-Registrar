@@ -68,7 +68,7 @@ let dbCount = await lib.airtable.query['@1.0.0'].count({
       if (!assetResult.data.assets[j].deleted) {
         walletASANum++;
         creatorAssets.push(assetResult.data.assets[j].index)
-        let ipfs = assetResult.data.assets[j].params.url.split('/').pop();
+        let ipfs = assetResult.data.assets[j].params.url.split('/').pop().split('#').shift();
         fieldsets.push({
           'asset_id': assetResult.data.assets[j].index,
           'name': `${assetResult.data.assets[j].params.name}`,
