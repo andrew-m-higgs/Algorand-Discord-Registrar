@@ -161,5 +161,100 @@ module.exports = {
     return "THIS ROLE ID DOES NOT EXIST";
   },
 
-}
+  // Flex the given asset to the current channel
+  flexAsset: async (context, flexAsset, flexType) => {
 
+    //const followupID = context.params.event.message.id;
+    const channelID  = context.params.event.channel_id;
+    const token      = context.params.event.token;
+    const memberID   = context.params.event.member.user.id;
+    const guild_id   = context.params.event.guild_id;
+
+    let assetName = flexAsset.rows[0].fields.name;
+    let assetIPFS = flexAsset.rows[0].fields.ipfs;
+    let assetID   = flexAsset.rows[0].fields.asset_id;
+    let assetQty  = flexAsset.rows[0].fields.qty;
+    let colour    = 0xFF9900;
+
+    let collectionName = await lib.utils.kv.get({
+      key: "CollectionName: " + guild_id,
+    });
+    
+    switch(flexType) {
+      case "RANDOM": 
+        message_content = `<@!${memberID}> who flexed a **random** NFT from ` + collectionName + "!";
+        colour = config.red();
+        break;
+      case "OWN":
+        message_content = `<@!${memberID}> who flexed **their** favourite NFT from ` + collectionName + "!";
+        colour = config.green();
+        break;
+    }
+
+    let fileExt = "";
+    let fileResponse = await lib.http.request['@1.1.6']({
+      method: 'GET',
+      url: `https://ipfs.io/ipfs/${assetIPFS}`,
+    });
+
+    let fileData = fileResponse.body;
+    switch(fileResponse.headers['content-type']) {
+      case "image/jpeg":
+        fileExt = ".jpg";
+        break;
+      case "image/gif":
+        fileExt = ".gif";
+        break;
+      case "image/png":
+        fileExt = ".png";
+        break;
+      case "video/webm":
+        fileExt = ".webm";
+        break;
+      default:
+        console.log("Error in header switch: " + fileResponse.headers['content-type']);
+    };
+
+    await lib.discord.channels['@0.2.0'].messages.create({
+      "channel_id": `${channelID}`,
+      "tts": false,
+      "content": "Flexing NFT",
+      "file": fileData,
+      "filename": fileResponse.headers.etag.split('"')[1] + fileExt,
+      "components": [
+        {
+          "type": 1,
+          "components": [
+            {
+              "style": 5,
+              "label": `NFT Explorer `,
+              "url": `https://www.nftexplorer.app/asset/${assetID}`,
+              "disabled": false,
+              "type": 2
+            },
+            {
+              "style": 5,
+              "label": `Rand Gallery`,
+              "url": `https://www.randgallery.com/algo-collection/?address=${assetID}`,
+              "disabled": false,
+              "type": 2
+            }
+          ]
+        }
+      ],
+      "embeds": [
+        {
+          "type": "rich",
+          "title": `**${assetName}**`,
+          "description": `This asset has a quantity of ${assetQty}`,
+          "color": 0x0a0a0a
+        },{
+          "type": "rich",
+          "title": "**Courtesy of:**",
+          "description": message_content,
+          "color": colour,
+        }
+      ]
+    });      
+  },
+}
