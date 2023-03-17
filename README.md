@@ -1,6 +1,6 @@
 # Algorand-Discord-Registrar
 
-[<img src="https://open.autocode.com/static/images/open.svg?" width="192">](https://open.autocode.com/)
+[<img src="https://open.autocode.com/static/images/open.svg?" width="192">](https://open.autocode.com/) ***This project is not quite ready for use yet.***
 
 ## Overview
 
