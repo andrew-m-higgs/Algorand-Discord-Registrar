@@ -84,7 +84,7 @@
 
 
     "functions/events/discord/message/selectmenu/dropdown_flex.js": {
-      "name": "discord.message.button.interaction",
+      "name": "discord.message.selectmenu.interaction",
       "subtype": {
         "custom_id": "dropdown_flex"
       }
