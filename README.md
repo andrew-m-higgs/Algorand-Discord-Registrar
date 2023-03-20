@@ -14,17 +14,20 @@ Configured by the creator or admin and used by the members.
 
 |Command|Description|
 |----|----|
+|**/clear-owner-roles**|Remove all configured owner roles|
 |**/config-creator-wallets**|Used to set the wallet addresses of the Creator Wallet|
 |**/config-log-channel**|Used to set the channel to which the bot will log information|
 |**/config-opt-in-token**|Used to set the opt-in token which will be used to confirm wallet ownership|
 |**/config-owner-roles**|Used to set the roles given to reward owners of multiple NFTs|
 |**/config-project-name**|Used to set the project name used by the bot for messages.|
 |**/config-registered-role**|Used to set the role for all members who have a registered wallet. e.g. @Registered|
+|**/update-creator-ids**|Fetch and set all the creator ASA IDs for the configured creator wallets|
 
 ### Commands used by members:
 |Command|Description|
 |----|----|
 |**/flex**|Used to flex their favourite owned NFT from the creator wallets|
+|**/flex-random**|Used to flex a random NFT from the creator wallets|
 |**/register**|Used to register their wallet. Gains the role set in **/config-registered-role**|
 |**/update-roles**|Used to to check and update roles by member.Checks the number of owned NFTs and gives the highest role achieved while removing all others|
 |**/view-owner-roles**|Get a list of roles assigned based on the number of NFTs held|
